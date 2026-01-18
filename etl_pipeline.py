@@ -36,7 +36,7 @@ class EltPiperline:
         df_final = self.dados_consolidados.copy()
 
         # filtro CORRETO (mantém dataframe)
-        df_final = df_final[df_final["Municipio"].str.contains(MUNICIPIO_ALVO, na=False)]
+        df_final = df_final[df_final["Municipio"].str.strip() == MUNICIPIO_ALVO]
 
 
         df_final = df_final.sort_values(
